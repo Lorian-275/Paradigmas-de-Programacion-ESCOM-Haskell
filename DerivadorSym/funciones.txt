@@ -1,0 +1,5 @@
+derivTodo(BinExp Mult (Var 'x') (BinExp Mult (Var 'x') (BinExp Mult (Var 'x') (Var 'x'))))   x*x*x*x
+derivTodo(BinExp Mult (Var 'x') (BinExp Mult (Var 'x') (BinExp Mult (Var 'x') (BinExp Mult (Var 'x') (Var 'x'))))) x*x*x*x*x
+derivTodo (UnExp ArcTan (BinExp Mult (Var 'x) (Var 'x')))
+derivFull(UnExp Log(UnExp Tan (BinExp Pow (UnExp Sen (Var 'x')) (Const 2))))
+derivFull (UnExp Tan (BinExp Pow (UnExp Sen (Var 'x')) (Const 2)))

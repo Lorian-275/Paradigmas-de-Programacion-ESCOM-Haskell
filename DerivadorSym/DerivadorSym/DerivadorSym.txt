@@ -1,0 +1,36 @@
+f(x)= 0  f'(x)= 0
+Haskell: derivar (Const 0)
+
+f(x)= x  f'(x)= 1
+Haskell: derivar (Var 'x')
+
+f(x)= sen(x+2)  f'(x)= cos(x+2)
+Haskell: derivar (UnExp Sin (BinExp Sumar(Var 'x')(Const 2)))
+
+f(x)= tan(x+5)  f'(x)= sec^2(x+5)
+Haskell: derivar (UnExp Tan (BinExp Sumar(Var 'x')(Const 5)))
+
+f(x)= ln (sen x)  f'(x)= (1/sen x) * cos x
+Haskell: derivar (UnExp Log (UnExp Sin (Var 'x')))
+
+f(x)= x^2  f'(x)= 2x
+Haskell: derivar (BinExp Pow (Var 'x') (Const 2))
+
+f(x)= 3x^3  f'(x)= 9x^2
+Haskell: derivar (BinExp Pow (BinExp Multiplicar (Const 3) (Var 'x')) (Const 3))
+
+f(x)= sen(cos(3x^3))  f'(x)= cos(cos(3x^3)) * (-sen(3x^3) * 9x^2)
+Haskell: derivar (UnExp Sin (UnExp Cos (BinExp Pow (BinExp Multiplicar (Const 3) (Var 'x')) (Const 3))))
+
+f(x)= (senx)^2  f'(x)= 2senxcosx
+Haskell: derivar (BinExp Pow (UnExp Sin (Var 'x')) (Const 2))
+
+f(x)= tan((senx)^2)  f'(x)= sec^2 ((senx)^2) * 2senxcosx  
+Haskell: derivar (UnExp Tan (BinExp Pow (UnExp Sin (Var 'x')) (Const 2)))
+
+f(x)= ln (tan((senx)^2))  f'(x)= 1/tan((senx)^2)) * sec^2 ((senx)^2) * 2senxcosx  
+Haskell: derivar (UnExp Log(UnExp Tan (BinExp Pow (UnExp Sin (Var 'x')) (Const 2))))
+
+
+
+
